@@ -1,0 +1,143 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║          💰 SISTEMA DE CONTROL DE GASTOS - GUÍA RÁPIDA          ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+🚀 CÓMO EJECUTAR (3 PASOS SIMPLES)
+═══════════════════════════════════════════════════════════════════
+
+📍 PASO 1: Asegúrate de tener ambos archivos en la misma carpeta
+   ├── backend.py
+   └── main.py
+
+📍 PASO 2: Abre una terminal/CMD en esa carpeta
+
+📍 PASO 3: Ejecuta el comando:
+
+   ⚡ Windows:
+      python main.py
+
+   ⚡ Linux/Mac:
+      python3 main.py
+
+
+🎯 USO DEL SISTEMA
+═══════════════════════════════════════════════════════════════════
+
+1️⃣  REGISTRAR GASTO:
+   • Selecciona categoría
+   • Escribe descripción
+   • Ingresa monto
+   • Clic en "Guardar Gasto" (o presiona Enter)
+
+2️⃣  VER GASTOS:
+   • Se muestran automáticamente en la tabla
+
+3️⃣  ELIMINAR GASTO:
+   • Doble clic sobre el gasto en la tabla
+   • Confirma la eliminación
+
+4️⃣  ESTADÍSTICAS:
+   • Se actualizan automáticamente al guardar/eliminar
+
+
+📂 ARCHIVOS GENERADOS
+═══════════════════════════════════════════════════════════════════
+
+gastos.csv - Archivo donde se guardan todos tus gastos
+            (Se crea automáticamente al ejecutar)
+
+
+🔧 ARQUITECTURA MODULAR
+═══════════════════════════════════════════════════════════════════
+
+backend.py:  Lógica de negocio (Clase GestorGastos)
+             • Crear CSV si no existe
+             • Guardar gastos con validaciones
+             • Leer historial
+             • Calcular totales y estadísticas
+             • Eliminar gastos
+
+main.py:     Interfaz gráfica (Tkinter)
+             • Formulario de entrada
+             • Tabla interactiva
+             • Panel de estadísticas
+             • Botones de acción
+
+
+💡 VENTAJAS DE ESTA ARQUITECTURA
+═══════════════════════════════════════════════════════════════════
+
+✅ Código organizado y fácil de mantener
+✅ Backend independiente (reutilizable en CLI, web, API)
+✅ Fácil cambiar de CSV a base de datos sin tocar la UI
+✅ Testeable por separado
+✅ Escalable para futuras mejoras
+
+
+🐛 SOLUCIÓN DE PROBLEMAS
+═══════════════════════════════════════════════════════════════════
+
+❌ Error: "No module named 'backend'"
+   ✅ Solución: Ejecuta main.py desde la misma carpeta que backend.py
+
+❌ Error: "No module named 'tkinter'"
+   ✅ Solución Ubuntu: sudo apt-get install python3-tk
+   ✅ Solución en Windows: Reinstala Python con "tcl/tk" activado
+
+❌ La ventana no aparece
+   ✅ Verifica que estés en un entorno gráfico (no SSH sin X11)
+
+
+🎨 CATEGORÍAS DISPONIBLES
+═══════════════════════════════════════════════════════════════════
+
+🍔 Comida            🚗 Transporte
+🎬 Entretenimiento   💊 Salud
+📚 Educación         🔌 Servicios
+🏠 Hogar             📦 Otros
+
+
+📊 CARACTERÍSTICAS AVANZADAS DEL BACKEND
+═══════════════════════════════════════════════════════════════════
+
+Puedes usar el backend de forma independiente en tus scripts:
+
+from backend import GestorGastos
+
+gestor = GestorGastos()
+
+# Guardar gasto
+gestor.guardar_gasto("Comida", "Pizza", 18.50)
+
+# Obtener todos los gastos
+gastos = gestor.obtener_gastos()
+
+# Calcular total
+total = gestor.calcular_total()
+
+# Estadísticas completas
+stats = gestor.obtener_estadisticas()
+
+
+🧪 PROBAR EL BACKEND SOLO
+═══════════════════════════════════════════════════════════════════
+
+python3 backend.py
+
+Esto ejecutará pruebas automáticas mostrando todas las funcionalidades
+
+
+🎯 MEJORAS FUTURAS SUGERIDAS
+═══════════════════════════════════════════════════════════════════
+
+• Filtros por fecha y categoría
+• Exportar a Excel/PDF
+• Gráficos de torta y barras
+• Presupuestos mensuales con alertas
+• Modo oscuro
+• Respaldo en la nube
+
+
+═══════════════════════════════════════════════════════════════════
+              ¡Disfruta gestionando tus gastos! 💰📊
+═══════════════════════════════════════════════════════════════════
